@@ -36,17 +36,36 @@ Contained within the final tidy dataset are the mean and std values for the abov
 <hr>
 
 <b>Specific files from the dataset used in this project:</b> <i>
-- 'features.txt': List of all features.
 
-- 'activity_labels.txt': Links the class labels with their activity name.
+1. features.txt': List of all features.
 
-- 'train/X_train.txt': Training set.
+2. activity_labels.txt': Links the class labels with their activity name.
 
-- 'train/y_train.txt': Training labels.
+3. train/X_train.txt': Training set.
 
-- 'test/X_test.txt': Test set.
+4. train/y_train.txt': Training labels.
 
-- 'test/y_test.txt': Test labels.
+5. test/X_test.txt': Test set.
+
+6. test/y_test.txt': Test labels.
+
+7. train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+8. test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30
 </i>
+<hr>
+
+<b>Actions taken by run_analysis.r:</b><i>
+
+1. Checks for, downloads, and unzips dataset
+2. Reads in above mentioned text files
+3. Adds names to columns for easier readability
+4. Applys labels to variables & activities
+5. Selects only mean value and STD value variables
+6. Merges subject ids, activities, and test/train data sets respectively to create independent test/train data sets
+7. Merges test and train data sets into one master data set
+8. Cleans variable labels of master data set for easier readability
+9. Using reshape2 package, transforms master data into data set containing mean of each variable grouped by subject ID and activity
+10. Saves out new data set from step 9 as tidy.txt
 
 
